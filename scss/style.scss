@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+  height: 100vh;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  font-family: Helvetica;
+  flex-wrap: wrap;
+}
+.tail {
+  padding: 10px;
+  background: green;
+
+  display: flex;
+  font-family: Helvetica;
+  flex-wrap: wrap;
+  height: 90vh;
+  flex-direction: row;
+}
+
+.card {
+  margin-left: -50px;
+  // &:hover {
+  //   margin-right: 50px;
+  //   transition: 0.2s margin linear;
+  //   &:last-child {
+  //     margin-right: 0px;
+  //   }
+  transition: 0.2s margin linear;
+
+  position: relative;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  color: black;
+  width: 150px;
+  height: 220px;
+  background: white;
+  border-radius: 10px;
+  transision: 0.2s margin linear;
+  display: grid;
+  grid-template-columns: 20% 1fr 20%;
+  grid-template-rows: 20% 1fr 20%;
+  grid-template-areas:
+    "number . ."
+    ". center ."
+    ". .  rotate";
+
+  &-red {
+    color: red;
+  }
+
+  .number {
+    grid-area: number;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    .char {
+      margin-top: -5px;
+    }
+  }
+  .number--rotate {
+    grid-area: rotate;
+    transform: rotate(180deg);
+  }
+  .center {
+    grid-area: center;
+    text-align: center;
+    font-size: 80px;
+  }
+}
+
+.our {
+  border: 5px solid red;
+  position: relative;
+
+  .hit {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+.table {
+  width: 100%;
+  min-height: 250px;
+  max-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.croupier {
+  position: relative;
+  border: 5px solid blue;
+  //   border: 5px solid red;
+}
+
+.counter {
+  position: absolute;
+  font-size: 50px;
+  color: white;
+  z-index: 5354445;
+  top: 0;
+  right: 0;
+}
+
+.options {
+  height: 10vh;
+  display: flex;
+  flex-wrap: wrap;
+  background: linear-gradient(
+    rgba(150, 12, 127, 0.933) rgba(172, 40, 150, 0.933)
+  );
+  justify-content: space-around;
+  align-items: center;
+  .btn {
+    padding: 20px 80px;
+    color: white;
+    border-radius: 3px;
+    font-weight: bold;
+  }
+  .btn-split {
+    background: blue;
+  }
+  .btn-double {
+    background: yellow;
+    color: #000;
+  }
+  .btn-hit {
+    background: yellowgreen;
+    color: #000;
+  }
+  .btn-stand {
+    background: red;
+  }
+}
